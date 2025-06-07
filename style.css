@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'bold';
+  transition: all .3s ease-in-out;
+}
+body {
+  background: radial-gradient(#aaa, #eee);
+}
+
+@font-face {
+    font-family: bold;
+    src: url(font/static/Oswald-Bold.ttf);
+}
+
+/* استایل های مورد نظر */
+
+.container{
+    position: relative;
+}
+.title{
+    position: absolute;
+    top: -175px;
+    right: 50%;
+    transform: translate(50% , 50%);
+    text-shadow: 0 0 5px #222;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 2px solid #3f8eae;
+    border-radius: 22px;
+    box-shadow: 0 0 10px 2px #3f9aae;
+}
+
+.brande-slider {
+  margin: 10rem 3rem 0 3rem ;
+  padding: 10px 15px;
+  border-radius: 13px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 3px #eee;
+  overflow: hidden;
+}
+
+.slides-item {
+  display: flex;
+  width: fit-content;
+  animation: scroll 20s linear infinite;
+}
+
+.brande-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 100px;
+  margin: 0 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.brande-item img {
+  width: 170px;
+  padding: 5px;
+  filter: grayscale(50%);
+}
+
+.slides-item:hover{
+    animation-play-state: paused;
+}
+
+.brande-item img:hover{
+    transform: scale(1.13);
+    filter: grayscale(0%);
+}
+
+/* ریسپانسیو */
+
+@media (width<780px){
+    .title{
+        font-size: 2rem;
+        font-weight: 800;
+        top: -145px;
+    }
+}
+
+@media(width<450px){
+    .title{
+        top: -85px;
+        font-size: 1.25rem;
+        padding: 6px 20px;
+        border-radius: 10px;
+    }
+
+    .brande-slider{
+        height: 90px;
+        padding: 0;
+        margin: 5rem 15px;
+    }
+    
+    .brande-item{
+        display: flex;
+        align-items: center;
+        margin: 0 -30px;
+    }
+
+    .slides-item img{
+        width: 80px;
+    }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media (width<320px) {
+  .brande-slider {
+    height: 60px;
+    margin: 5rem 5px;
+    border-radius: 10px;
+  }
+
+  .slides-item {
+    height: 40px;
+    align-items: center;
+  }
+
+  .brande-item {
+    margin: 0 -50px;
+  }
+
+  .brande-item img {
+    width: 70px;
+  }
+
+  .container{
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .title{
+    width: 230px;
+    top: -80px;
+    font-size: 1rem;
+    border-radius: 13px;
+    padding: 5px ;
+  }
+}
+
